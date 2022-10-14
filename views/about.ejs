@@ -7,14 +7,22 @@
       <%= title %>
     </h1>
     <p>Welcome to <%= title %></p>
-    <div class="card" style="width: 18rem;">
-      <img src="/Assets/images/juliano.jpg" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Juliano Souza Chaves Costa</h5>
-        <p class="card-text">I am a software engineering student at Centennial College.</p>
-        <a href="\Assets\Juliano Souza Chaves Costa.pdf" class="btn btn-primary">Load PDF version of my resume</a>
+    <div class="container text-center">
+      <div class="row">
+        <div class="col-4">
+          <div class="card" style="width: 18rem;">
+            <img src="/Assets/images/juliano.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Juliano Souza Chaves Costa</h5>
+              <p class="card-text">I am a software engineering student at Centennial College.</p>
+              <a href="\Assets\Juliano Souza Chaves Costa.pdf" target="_blank" class="btn btn-primary">Load PDF version of my resume</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-8">col-8</div>
       </div>
     </div>
+
   </main>
 
 <%- include partials/bottom_nav %> 
