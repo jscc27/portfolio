@@ -1,22 +1,24 @@
 
 document.getElementById("aboutBtn").addEventListener("click", getAbout);
 
+document.getElementById("projectsBtn").addEventListener("click", getProjects);
+
+document.getElementById("servicesBtn").addEventListener("click", getServices);
+
+document.getElementById("contactBtn").addEventListener("click", getContact);
+
 function getAbout(){
     res.render('about', { title: 'Home' });
 }
 
-function getHome(){
+function getProjects(){
     res.render('index', { title: 'Home' });
 }
 
-function getHome(){
+function getServices(){
     res.render('index', { title: 'Home' });
 }
 
-function getHome(){
-    res.render('index', { title: 'Home' });
-}
-
-function getHome(){
+function getContact(){
     res.render('index', { title: 'Home' });
 }
