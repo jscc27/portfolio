@@ -39,11 +39,6 @@ app.use(function(err, req, res, next) {
   res.render('error', { title: 'Error' });
 });
 
-app.post('/', function(req, res) {
-  res.writeHead(302, {
-    'Location': '/home'
-  });
-  res.end();
-});
+
 
 module.exports = app;
