@@ -10,14 +10,19 @@
     </p>
 
     <form>
-      <h2>Message</h2>
-      <label for="fname">First Name: </label>
-      <input type="text" id="fname" name="fname">
-      <label for="lname">Last NAme: </label>
-      <input type="text" id="lname" name="lname">
-      <label for="messagetext">Message: </label>
-      <textarea id="messagetext" name="messagetext">write you message here</textarea>
-      <input type="submit" value="Send">
+      <div class="mb-3">
+        <label for="fName" class="form-label">First Name</label>
+        <input type="text" class="form-control" id="fName">
+      </div>
+      <div class="mb-3">
+        <label for="lName" class="form-label">Last Name</label>
+        <input type="text" class="form-control" id="lName">
+      </div>
+      <div class="mb-3">
+        <label for="emailAddress" class="form-label">Last Name</label>
+        <input type="text" class="form-control" id="emailAddress">
+      </div>
+      <button type="submit" class="btn btn-primary">Send</button>
     </form>
   </main>
 
