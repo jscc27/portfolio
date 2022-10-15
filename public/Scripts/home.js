@@ -8,11 +8,13 @@ document.getElementById("servicesBtn").addEventListener("click", getServices);
 document.getElementById("contactBtn").addEventListener("click", getContact);
 
 function getAbout(){
-    res.render('about', { title: 'Home' });
+    res.render('about', { title: 'About Me' });
 }
 
 function getProjects(){
-    res.render('index', { title: 'Home' });
+    router.get('/projects', function(req, res, next) {
+        res.render('projects', { title: 'Projects' });
+      });
 }
 
 function getServices(){
