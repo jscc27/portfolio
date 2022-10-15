@@ -39,4 +39,6 @@ app.use(function(err, req, res, next) {
   res.render('error', { title: 'Error' });
 });
 
+app.post('/', indexRouter);
+
 module.exports = app;
