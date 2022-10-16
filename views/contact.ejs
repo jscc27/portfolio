@@ -2,13 +2,17 @@
 
 <%- include partials/main_nav.ejs %> 
   
-  <main class="container">
-    <h1>
+  <main class="container p-3">
+    <h2>
       <%= title %>
-    </h1>
-    <p><a href="mailto:julianosouzach@gmail.com">E-mail: julianosouzach@gmail.com</a></p>
+    </h2>
+    <div class="container m-5">
+      <h5><a href="mailto:julianosouzach@gmail.com"><i class="fa-solid fa-envelope"></i> E-mail: julianosouzach@gmail.com</a></h5>
+      <h5><a href="www.linkedin.com/in/juliano-sc-costa"><i class="fa-brands fa-linkedin"></i> LinkedIn</a></h5>
+    </div>
 
-    <form method="post">
+    <h2>Leave me a message</h2>
+    <form method="post" class="p-2">
       <div class="mb-3">
         <label for="fName" class="form-label">First Name</label>
         <input type="text" class="form-control" id="fName">
