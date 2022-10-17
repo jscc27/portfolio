@@ -2,15 +2,37 @@
 
 <%- include partials/main_nav.ejs %> 
   
-  <main class="container">
+  <main class="container p-3">
     <h1>
       <%= title %>
     </h1>
     <p>Welcome to <%= title %>
     </p>
-    <h4>Project 1</h4>
-    <h4>Project 2</h4>
-    <h4>Project 3</h4>
+    <div class="container p-5">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Photo</th>
+            <th scope="col" colspan="2">Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td scope="row"><img src="/Assets/images/projects/project1.png" class="rounded float-start" width="300"></td>
+            <td colspan="2"><p>Calculator developed using <strong>C#</strong> WindowsForm. The calculator performs basic operations in standard mode and has a scientific mode that adds four more operation options.</p></td>
+          </tr>
+          <tr>
+            <td scope="row"><img src="/Assets/images/projects/project2.png" class="rounded float-start" width="300"></td>
+            <td colspan="2"><p><strong>Front-end development</strong> of a photo gallery using HTML, CSS, and JavaScript.</p></td>
+          </tr>
+          <tr>
+            <td scope="row"><img src="/Assets/images/projects/project3.jpg" class="rounded float-start" width="300"></td>
+            <td colspan="2">Software project of an application for people to find friends to workout together. The image is the class diagram (UML) during the <strong>Software Requirements</strong> stage.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    
   </main>
 
 <%- include partials/bottom_nav %> 
