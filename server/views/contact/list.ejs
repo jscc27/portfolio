@@ -1,6 +1,6 @@
-<%- include ('partials/header.ejs'); %> 
+<%- include ('../partials/header.ejs'); %> 
 
-<%- include ('partials/main_nav.ejs'); %> 
+<%- include ('../partials/main_nav.ejs'); %> 
 
 <main class="container">
     <div class="row">
@@ -10,16 +10,22 @@
                 <tr>
                     <th class="text-center">First Name</th>
                     <th class="text-center">Second Name</th>
+                    <th class="text-center">Phone</th>
                     <th class="text-center">Email</th>
                     <th class="text-center">Message</th>
+                    <th class="text-center"></th>
+                    <th class="text-center"></th>
                 </tr>
 
                 <% for(let count = 0; count < ContactList.length; count++){ %>
                     <tr>
                         <td class="text-center"><%= ContactList[count].fname %> </td>
                         <td class="text-center"><%= ContactList[count].lname %> </td>
+                        <td class="text-center"><%= ContactList[count].phone %> </td>
                         <td class="text-center"><%= ContactList[count].email %> </td>
                         <td class="text-center"><%= ContactList[count].message %> </td>
+                        <td class="text-center"> <a href="/contact-list/edit/<%= ContactList[count]._id %>" class="btn btn-primary">Edit</a> </td>
+                        <td class="text-center"> <a href="/contact-list/delete/<%= ContactList[count]._id %>" class="btn btn-danger">Delete</a> </td>
                     </tr>
                 <% } %>
             </table>
@@ -28,6 +34,6 @@
 </main>
 
 
-<%- include ('partials/bottom_nav'); %> 
+<%- include ('../partials/bottom_nav'); %> 
 
-<%- include ('partials/footer.ejs'); %> 
+<%- include ('../partials/footer.ejs'); %> 

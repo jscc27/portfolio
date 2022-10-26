@@ -1,11 +1,12 @@
-<%- include ('partials/header.ejs'); %> 
+<%- include ('../partials/header.ejs'); %> 
 
-<%- include ('partials/main_nav.ejs'); %> 
+<%- include ('../partials/main_nav.ejs'); %> 
 
 <main class="container">
     <div class="row">
         <div class="col-md-offset-3 col-md-6">
             <h1><%= title %></h1>
+            <a href="/book-list/add" class="btn btn-primary" role="button">Add a Book</a>
             <table class="table table-bordered-table-striped-hover">
                 <tr>
                     <th class="text-center">Name</th>
@@ -13,6 +14,8 @@
                     <th class="text-center">Published</th>
                     <th class="text-center">Description</th>
                     <th class="text-center">Price</th>
+                    <th class="text-center"></th>
+                    <th class="text-center"></th>
                 </tr>
 
                 <% for(let count = 0; count < BookList.length; count++){ %>
@@ -22,6 +25,8 @@
                         <td class="text-center"><%= BookList[count].published %> </td>
                         <td class="text-center"><%= BookList[count].description %> </td>
                         <td class="text-center"><%= BookList[count].price %> </td>
+                        <td class="text-center"> <a href="/book-list/edit/<%= BookList[count]._id %>" class="btn btn-primary">Edit</a> </td>
+                        <td class="text-center"> <a href="/book-list/delete/<%= BookList[count]._id %>" class="btn btn-danger">Delete</a> </td>
                     </tr>
                 <% } %>
             </table>
@@ -30,6 +35,6 @@
 </main>
 
 
-<%- include ('partials/bottom_nav'); %> 
+<%- include ('../partials/bottom_nav'); %> 
 
-<%- include ('partials/footer.ejs'); %> 
+<%- include ('../partials/footer.ejs'); %> 

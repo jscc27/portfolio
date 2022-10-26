@@ -19,11 +19,11 @@ router.get('/', (req, res, next) => {
 
 //create
 
-router.get('add', (req, res, next) => {
-    res.render('book/add', {title: 'Add Book', BookList: bookList});
+router.get('/add', (req, res, next) => {
+    res.render('book/add', {title: 'Add Book'});
 });
 
-router.post('add', (req, res, next) => {
+router.post('/add', (req, res, next) => {
     let newBook = Book({
         "name": req.body.name,
         "author": req.body.author,
@@ -46,7 +46,7 @@ router.post('add', (req, res, next) => {
 
 //update
 
-router.get('edit/:id', (req, res, next) => {
+router.get('/edit/:id', (req, res, next) => {
     let id = req.params.id;
 
     Book.findById(id, (err, bookToEdit) => {
@@ -60,7 +60,7 @@ router.get('edit/:id', (req, res, next) => {
     });
 });
 
-router.post('edit/:id', (req, res, next) => {
+router.post('/edit/:id', (req, res, next) => {
     let id = req.params.id;
 
     let updatedBook = Book({
@@ -78,15 +78,16 @@ router.post('edit/:id', (req, res, next) => {
             res.end(err);
         }
         else{
-            res.render('book/edit', {title: 'Edit Book', book: bookToEdit});
+            res.redirect('/book-list');
         }
     });
 });
 
 //delete
 
-router.get('delete/:id', (req, res, next) => {
+router.get('/delete/:id', (req, res, next) => {
     let id = req.params.id;
+
 
     Book.remove({_id: id}, (err) => {
         if(err){
@@ -94,7 +95,7 @@ router.get('delete/:id', (req, res, next) => {
             res.end(err);
         }
         else{
-            res.render('book/edit', {title: 'Edit Book', book: bookToEdit});
+            res.redirect('/book-list');
         }
     });
 });
