@@ -6,6 +6,8 @@ let logger = require('morgan');
 
 let indexRouter = require('../routes/index');
 let usersRouter = require('../routes/users');
+let booksRouter = require('../routes/books');
+let contactsRouter = require('../routes/contacts');
 
 //database
 let mongoose = require("mongoose");
@@ -30,11 +32,13 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, '../public')));
-app.use(express.static(path.join(__dirname, '../node_modules')));
+app.use(express.static(path.join(__dirname, '../../public')));
+app.use(express.static(path.join(__dirname, '../../node_modules')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/book-list', booksRouter);
+app.use('/contact-list', contactsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
