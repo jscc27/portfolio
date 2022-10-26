@@ -21,25 +21,26 @@
     <form class="p-2" method="post">
       <div class="mb-3">
         <label for="fName" class="form-label">First Name</label>
-        <input type="text" class="form-control" id="fName" name="fname">
+        <input type="text" class="form-control" id="fName" name="fname" value=" <%= contact.fname %> ">
       </div>
       <div class="mb-3">
         <label for="lName" class="form-label">Last Name</label>
-        <input type="text" class="form-control" id="lName" name="lname">
+        <input type="text" class="form-control" id="lName" name="lname" value=" <%= contact.lname %> ">
       </div>
       <div class="mb-3">
         <label for="phone" class="form-label">Phone Number</label>
-        <input type="text" class="form-control" id="phone" name="phone">
+        <input type="text" class="form-control" id="phone" name="phone" value=" <%= contact.phone %> ">
       </div>
       <div class="mb-3">
         <label for="emailAddress" class="form-label">E-mail</label>
-        <input type="text" class="form-control" id="emailAddress" name="email">
+        <input type="text" class="form-control" id="emailAddress" name="email" value=" <%= contact.email %> ">
       </div><br>
       <div class="form-floating">
-        <textarea class="form-control" placeholder="Write your message here" id="messageText" style="height: 100px" name="message"></textarea>
+        <textarea class="form-control" placeholder="Write your message here" id="messageText" style="height: 100px" name="message"><%= contact.message %></textarea>
         <label for="messageText">Message</label>
       </div><br>
       <button type="submit" class="btn btn-primary">Send</button>
+      <a href="/contact-list" class="btn btn-warning">Cancel</a>
     </form>
   </main>
 

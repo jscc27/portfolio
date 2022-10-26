@@ -48,13 +48,13 @@ router.post('/add', (req, res, next) => {
 router.get('/edit/:id', (req, res, next) => {
     let id = req.params.id;
 
-    Book.findById(id, (err, bookToEdit) => {
+    Contact.findById(id, (err, contatcToEdit) => {
         if(err){
             console.log(err);
             res.end(err);
         }
         else{
-            res.render('contact/edit', {title: 'Edit Contact', book: bookToEdit});
+            res.render('contact/edit', {title: 'Edit Contact', contact: contatcToEdit});
         }
     });
 });
