@@ -3,28 +3,21 @@
 // StudentID: 301222713
 // Date: 2022-10-16
 
-var express = require('express');
-var router = express.Router();
+let express = require('express');
+let router = express.Router();
+
+let indexController = require('../controllers/index');
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Home' });
-});
-router.get('/home', function(req, res, next) {
-  res.render('index', { title: 'Home' });
-});
+router.get('/', indexController.displayHomePage);
+
+router.get('/home', indexController.displayHomePage);
 /* GET about page. */
-router.get('/about', function(req, res, next) {
-  res.render('about', { title: 'About Me' });
-});
+router.get('/about', indexController.displayAboutPage);
 /* GET projects page. */
-router.get('/projects', function(req, res, next) {
-  res.render('projects', { title: 'Projects' });
-});
+router.get('/projects', indexController.displayProjectsPage);
 /* GET services page. */
-router.get('/services', function(req, res, next) {
-  res.render('services', { title: 'Services' });
-});
+router.get('/services', indexController.displayServicesPage);
 
 
 
