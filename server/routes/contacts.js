@@ -1,3 +1,7 @@
+// Name: Juliano Souza Chaves Costa
+// StudentID: 301222713
+// Date: 2022-10-29
+
 let express = require('express');
 let router = express.Router();
 let mangoose = require('mongoose');
@@ -6,8 +10,8 @@ let Contact = require('../models/contact');
 
 let passport = require('passport');
 
-
-function requireAuth(req, res, next){
+// check authentication
+function requireAuth(req, res, next){ 
     if(!req.isAuthenticated()){
         return res.redirect('/login');
     }
