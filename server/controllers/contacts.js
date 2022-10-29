@@ -35,7 +35,7 @@ module.exports.processAddContact = (req, res, next) => {
             res.end(err);
         }
         else{
-            res.redirect('/contact-list');
+            res.redirect('/contact-list/add');
         }
     });
 
