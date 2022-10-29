@@ -19,9 +19,9 @@ let contactController = require('../controllers/contacts');
 router.get('/', requireAuth, contactController.displayContactList);
 
 /* GET contact page. */
-router.get('/add', requireAuth, contactController.displayAddContact);
+router.get('/add', contactController.displayAddContact);
 
-router.post('/add', requireAuth, contactController.processAddContact);
+router.post('/add', contactController.processAddContact);
   
 //update
 
