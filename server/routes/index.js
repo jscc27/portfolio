@@ -20,5 +20,19 @@ router.get('/projects', indexController.displayProjectsPage);
 router.get('/services', indexController.displayServicesPage);
 
 
+/* GET login page. */
+router.get('/login', indexController.displayLoginPage);
+
+/* POST login page. */
+router.post('/login', indexController.processLoginPage);
+
+/* GET register page. */
+router.get('/register', indexController.displayRegisterPage);
+
+/* POST register page. */
+router.post('/register', indexController.processRegisterPage);
+
+/* logout. */
+router.get('/logout', indexController.performLogout);
 
 module.exports = router;

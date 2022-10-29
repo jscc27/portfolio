@@ -4,6 +4,16 @@ let mangoose = require('mongoose');
 
 let Book = require('../models/book');
 
+let passport = require('passport');
+
+
+function requireAuth(req, res, next){
+    if(!req.isAuthenticated()){
+        return res.redirect('/login');
+    }
+    next();
+}
+
 
 router.get('/', (req, res, next) => {
     Book.find((err, bookList) => {
@@ -12,18 +22,18 @@ router.get('/', (req, res, next) => {
         }
         else{
             console.log(bookList);
-            res.render('book/list', {title: 'Book List', BookList: bookList});
+            res.render('book/list', {title: 'Book List', BookList: bookList, displayName: req.user ? req.user.displayName : ''});
         }
     });
 });
 
 //create
 
-router.get('/add', (req, res, next) => {
+router.get('/add', requireAuth, (req, res, next) => {
     res.render('book/add', {title: 'Add Book'});
 });
 
-router.post('/add', (req, res, next) => {
+router.post('/add', requireAuth, (req, res, next) => {
     let newBook = Book({
         "name": req.body.name,
         "author": req.body.author,
@@ -46,7 +56,7 @@ router.post('/add', (req, res, next) => {
 
 //update
 
-router.get('/edit/:id', (req, res, next) => {
+router.get('/edit/:id', requireAuth, (req, res, next) => {
     let id = req.params.id;
 
     Book.findById(id, (err, bookToEdit) => {
@@ -55,12 +65,12 @@ router.get('/edit/:id', (req, res, next) => {
             res.end(err);
         }
         else{
-            res.render('book/edit', {title: 'Edit Book', book: bookToEdit});
+            res.render('book/edit', {title: 'Edit Book', book: bookToEdit, displayName: req.user ? req.user.displayName : ''});
         }
     });
 });
 
-router.post('/edit/:id', (req, res, next) => {
+router.post('/edit/:id', requireAuth, (req, res, next) => {
     let id = req.params.id;
 
     let updatedBook = Book({
@@ -85,7 +95,7 @@ router.post('/edit/:id', (req, res, next) => {
 
 //delete
 
-router.get('/delete/:id', (req, res, next) => {
+router.get('/delete/:id', requireAuth, (req, res, next) => {
     let id = req.params.id;
 
 

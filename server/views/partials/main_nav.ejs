@@ -1,4 +1,3 @@
-
 <!--
   Name: Juliano Souza Chaves Costa
   StudentID: 301222713
@@ -6,64 +5,74 @@
 -->
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-5">
-    <a class="navbar-brand rouded-circle" href="/"><img src="/Assets/images/logo.png" alt="Bootstrap" height="40"> &nbsp; Portfolio</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+  <a class="navbar-brand rouded-circle" href="/"><img src="/Assets/images/logo.png" alt="Bootstrap" height="40"> &nbsp;
+    Portfolio</a>
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ms-auto">
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ms-auto">
 
-        <li class="nav-item">
-          <% if(title=="Home" ) { %>
-            <a class="nav-link active" href="/">
-              <% } else { %>
-                <a class="nav-link" href="/">
-                  <% } %>
-                    Home
-                </a>
-        </li>
+      <li class="nav-item">
+        <% if(title=="Home" ) { %>
+          <a class="nav-link active" href="/">
+            <% } else { %>
+              <a class="nav-link" href="/">
+                <% } %>
+                  Home
+              </a>
+      </li>
 
-        <li class="nav-item">
-          <% if(title=="About Me" ) { %>
-            <a class="nav-link active" href="/about">
-              <% } else { %>
-                <a class="nav-link" href="/about">
-                  <% } %>
-                    About Me
-                </a>
-        </li>
+      <li class="nav-item">
+        <% if(title=="About Me" ) { %>
+          <a class="nav-link active" href="/about">
+            <% } else { %>
+              <a class="nav-link" href="/about">
+                <% } %>
+                  About Me
+              </a>
+      </li>
 
-        <li class="nav-item">
-          <% if(title=="Projects" ) { %>
-            <a class="nav-link active" href="/projects">
-              <% } else { %>
-                <a class="nav-link" href="/projects">
-                  <% } %>
-                    Projects
-                </a>
-        </li>
+      <li class="nav-item">
+        <% if(title=="Projects" ) { %>
+          <a class="nav-link active" href="/projects">
+            <% } else { %>
+              <a class="nav-link" href="/projects">
+                <% } %>
+                  Projects
+              </a>
+      </li>
 
-        <li class="nav-item">
-          <% if(title=="Services" ) { %>
-            <a class="nav-link active" href="/services">
-              <% } else { %>
-                <a class="nav-link" href="/services">
-                  <% } %>
-                    Services
-                </a>
-        </li>
+      <li class="nav-item">
+        <% if(title=="Services" ) { %>
+          <a class="nav-link active" href="/services">
+            <% } else { %>
+              <a class="nav-link" href="/services">
+                <% } %>
+                  Services
+              </a>
+      </li>
 
-        <li class="nav-item">
-          <% if(title=="Contact Me" ) { %>
-            <a class="nav-link active" href="/contact-list/add">
-              <% } else { %>
-                <a class="nav-link" href="/contact-list/add">
-                  <% } %>
-                    Contact Me
-                </a>
-        </li>
-      </ul>
-    </div>
-  </nav>
+      <li class="nav-item">
+        <% if(title=="Contact Me" ) { %>
+          <a class="nav-link active" href="/contact-list/add">
+            <% } else { %>
+              <a class="nav-link" href="/contact-list/add">
+                <% } %>
+                  Contact Me
+              </a>
+      </li>
+
+      <% if(typeof displayName == 'string' && displayName) { %> 
+        <li class="navbar-text">Welcome, <%= displayName %></li>
+        <li class="nav-item"><a href="/logout" class="nav-link">Logout</a></li>
+      <% } else { %> 
+        <li class="nav-item"><a href="/login" class="nav-link">Login</a></li>
+      <% } %>
+      
+
+    </ul>
+  </div>
+</nav>
