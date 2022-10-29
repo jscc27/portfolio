@@ -11,13 +11,13 @@ module.exports.displayContactList = (req, res, next) => {
         }
         else{
             console.log(contactList);
-            res.render('contact/list', {title: 'Contacts List', ContactList: contactList});
+            res.render('contact/list', {title: 'Contacts List', ContactList: contactList, displayName: req.user ? req.user.displayName : ''});
         }
     });
 }
 
 module.exports.displayAddContact = (req, res, next) => {
-    res.render('contact/add', { title: 'Contact Me' });
+    res.render('contact/add', { title: 'Contact Me' , displayName: req.user ? req.user.displayName : ''});
 }
 
 module.exports.processAddContact = (req, res, next) => {
@@ -50,7 +50,7 @@ module.exports.displayEditContact = (req, res, next) => {
             res.end(err);
         }
         else{
-            res.render('contact/edit', {title: 'Edit Contact', contact: contatcToEdit});
+            res.render('contact/edit', {title: 'Edit Contact', contact: contatcToEdit, displayName: req.user ? req.user.displayName : ''});
         }
     });
 }
