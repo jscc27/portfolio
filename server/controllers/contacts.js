@@ -10,7 +10,7 @@ module.exports.displayContactList = (req, res, next) => {
             return console.error(err);
         }
         else{
-            console.log(contactList);
+            // console.log(contactList);
             res.render('contact/list', {title: 'Contacts List', ContactList: contactList, displayName: req.user ? req.user.displayName : ''});
         }
     });
